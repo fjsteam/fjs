@@ -4,6 +4,7 @@
 ?>
 
 <?php
+//Frank
     //echo "-->".$_GET['item_id'];
     $the_date = date('Y-m-d');
     $the_time = date("H:i:s");
