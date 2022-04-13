@@ -36,7 +36,7 @@
     {
 ?>
         <script>
-            alert("ลบ<?=$_GET['item_id']?>ผิดพลาด");
+            alert("ลบ<?=$_GET['item_id']?>ผิดพลาด!");
             window.history.back();
         </script>
 <?php        
