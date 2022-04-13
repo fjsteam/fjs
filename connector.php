@@ -1,9 +1,9 @@
 <?php
     date_default_timezone_set('Asia/Bangkok');
-    $host = "127.0.0.1";
-    $user = "dev";
+    $host = "158.108.101.25";
+    $user = "FJSROOT";
     $pwd = "1234";
-    $dbname="kushop";
+    $dbname="FJS";
 
     $dsn = "mysql:host=$host;dbname=$dbname";
 	try {
