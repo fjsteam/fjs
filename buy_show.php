@@ -113,16 +113,20 @@
                             ?>
                         </select>
                     </div>
+                    <div class="col s5 m4 l2 input-field">
+                        <input type="file" class="file-path validate" id="buy_img" name="buy_img" value="<?=$master_array['buy_img']?>" >
+                        <label for="buy_img">รูปภาพ</label>
+                    </div>
                     <div class="col s12 m6 l3 input-field">
                         <input type="text" id="buy_date" name="buy_date" class="datepicker" value="<?=$master_array['buy_date']?>">
                         <label for="buy_date">วันที่</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
-                        <input type="text" id="buy_qty" name="buy_qty" value="<?=$master_array['buy_qty']?>" readonly>
+                        <input type="number" id="buy_qty" name="buy_qty" value="<?=$master_array['buy_qty']?>" >
                         <label for="buy_qty">จำนวน</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
-                        <input type="text" id="buy_money" name="buy_money" value="<?=$master_array['buy_money']?>" readonly>
+                        <input type="number" id="buy_money" name="buy_money" value="<?=$master_array['buy_money']?>" >
                         <label for="buy_money">ยอดเงิน</label>
                     </div>
                     
