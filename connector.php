@@ -4,7 +4,9 @@
     // $user = "dev";
     // $pwd = "1234";
     // $dbname="kushop";
-	$host = "158.108.101.25";
+    // $host = "158.108.101.25";
+    // $user = "FJSROOT";
+	$host = "127.0.0.1";
     $user = "FJSROOT";
     $pwd = "1234";
     $dbname="FJS";
