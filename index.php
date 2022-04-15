@@ -28,6 +28,7 @@ include "connector.php";
     include "menuheader.php";
     ?>
     <div class="container">
+        <h4 class="pink-text">สินค้า</h4>
         <!-- <h4 class="pink-text">สินค้า</h4> -->
 
         <div class="row">
@@ -39,7 +40,7 @@ include "connector.php";
                 <div class="col l3 m4 s6">
                     <div class="card">
                         <div class="card-image">
-                            <img class="materialboxed tooltipped" 
+                            <img class="materialboxed tooltipped" height="250px" width="200px"
                                 src="./it_img/<?= $data_array['item_img'] ?>" 
                                 alt="<?= $data_array['item_id'] ?>" width="100px" 
                                 data-position="right" 
