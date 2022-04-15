@@ -35,12 +35,12 @@
         // function ของ Javascript เพื่อให้ยืนยันการสั่งสินค้า
         function cf_cf(the_id)
         {
-            //alert();
-            cf = confirm("ยืนยันสั่งสินค้า");
-            if(cf)
-            {
-                window.location="cart_cf.php";
-            }
+                //alert();
+                cf = confirm("ยืนยันสั่งสินค้า");
+                if(cf)
+                {
+                    window.location="cart_cf.php";
+                }         
         }
     </script>
 </head>
@@ -114,20 +114,37 @@
                                     <td><?=$dtl_array['item_name']?></td>
                                     <!-- แสดงข้อมูลตัวเลขแบบมี comma คั่น  ผ่าน function number_format(ค่าที่จะแสดง,จุดทศนิยม)-->
                                     <td><?=number_format($dtl_array['price'])?></td>
+
                                     <td class="right-align ">
+
+                                    <?php if ($dtl_array['qty'] > 1) : ?>
                                         <a href="cart_add_item.php?item_id=<?=$dtl_array['item_id']?>&add_qty=-1" class="grey-text">
                                         <i class="material-icons">remove_circle</i>
                                         </a>
+                                    <?php endif ?>
+
                                     </td>
                                     <td class="center-align">   
                                         <!-- แสดงจำนวนสินค้าปัจจุบัน ในตะกร้า -->
                                         <?=$dtl_array['qty']?>
                                     </td>
+                                    
                                     <td  class="left-align">
+
+                                    <?php 
+
+                                    $sql_check = "     SELECT *  FROM item 
+                                                        WHERE item_id = '" . $dtl_array['item_id'] . "'";
+                                    $res_check = $db->query($sql_check);
+                                    $check_array = $res_check->fetch(PDO::FETCH_ASSOC);
+
+
+                                    if ($dtl_array['qty'] < $check_array['cur_stk']) : ?>
                                         <a href="cart_add_item.php?item_id=<?=$dtl_array['item_id']?>&add_qty=1" class="teal-text">
                                         <i class="material-icons ">add_circle</i>
                                         </a>
-                                    </td>
+                                    <?php endif ?>
+                                    </td>                                                                 
                                     <!-- แสดงยอดเงินรวมของสินค้าปัจจุบัน -->
                                     <td><?=number_format($dtl_array['price']*$dtl_array['qty'])?></td>
                                     

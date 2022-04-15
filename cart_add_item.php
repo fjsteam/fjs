@@ -55,16 +55,53 @@
             // ถ้ามีสินค้าที่เลือกในตะกร้าอยู่แล้ว (โดยปรกติ)ก็จะเพิ่มสินค้าทีละ 1 ก็คือ + เข้าไปเลย
             $add_qty=1;
 
+            $sql_chack1 = "   SELECT *  FROM item 
+            WHERE item_id = '" . $_GET['item_id'] . "'";
+            $res_chack1 = $db->query($sql_chack1);
+            $chack_array1 = $res_chack1->fetch(PDO::FETCH_ASSOC);
+
+            $sql_chack2 = "   SELECT *  FROM cart_item 
+            WHERE item_id = '" . $_GET['item_id'] . "' 
+            AND     cart_id = '".$_SESSION['cart_id']."'";
+            $res_chack2 = $db->query($sql_chack2);
+            $chack_array2 = $res_chack2->fetch(PDO::FETCH_ASSOC);
+
             // -------------เพิ่มหรือลด--------------------------
             if(isset($_GET['add_qty']))
                 $add_qty=$_GET['add_qty'];
+                if($chack_array2['qty']+$add_qty<=0)
+                {
+                    echo'<script>
+                    window.location="cart_show.php"
+                    alert("ไม่สามารถลดจำนวนได้อีกแล้ว")
+                    </script>' ;
+                }
+
+                elseif($chack_array2['qty']+$add_qty>$chack_array1['cur_stk'])
+                {
+                    echo'<script>
+                    window.location="cart_show.php"
+                    alert("จำนวนสินค้าเกินจำนวนในสต๊อก")
+                    </script>' ;
+                }
             //--------------------------------------
-            
-            $sql_update = "	UPDATE cart_item 
-                            SET	qty = qty+'" . $add_qty . "'
-                            WHERE	cart_id = '" .  $_SESSION['cart_id'] . "'
-                            AND     item_id = '" . $_GET['item_id'] . "' 
-                            "; 
+                else
+                {
+                    $sql_update = "	UPDATE cart_item 
+                    SET	qty = qty+'" . $add_qty . "'
+                    WHERE	cart_id = '" .  $_SESSION['cart_id'] . "'
+                                AND     item_id = '" . $_GET['item_id'] . "' 
+                    "; 
+                }
+                
+            // if($sql_update == 0)
+            // {
+            //     $sql_update = "	UPDATE cart_item 
+            //                     SET	qty = '1'
+            //                     WHERE	cart_id = '" .  $_SESSION['cart_id'] . "'
+            //                     AND     item_id = '" . $_GET['item_id'] . "' 
+            //                     "; 
+            // }
             //เปลี่ยนหน้า
             // echo "<script>window.location='cart_show.php';</script>";
         }
