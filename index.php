@@ -12,7 +12,7 @@
     <title>KU Computer Shop</title>
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
-    <link rel="icon" href="./img/kulogo.ico">
+    <link rel="icon" href="./img/Football Soccer Club Logo1.png">
 </head>
 
 <body>

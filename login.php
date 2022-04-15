@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KU Computer Shop</title>
+    <title>Football Jersey Store</title>
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
-    <link rel="icon" href="./img/kulogo.ico">
+    <link rel="icon" href="./img/Football Soccer Club Logo1.png">
 </head>
 <body>
     <?php
@@ -21,10 +21,10 @@
         <form name="login" action="chkuser.php" method="POST" >
             <div class="row">
                 <div class="col l6 s12 offset-l3">
-                    <h4 class="pink-text ">KU SHOP</h4>
+                    <h4 class="pink-text ">Football Jersey Store</h4>
                     <div class="row">
                         <div class="col s12 center">
-                            <img src="./img/kulogo.png" alt="" >
+                            <img src="./img/Football Soccer Club Logo.png" alt="" width="200px">
                         </div>
                         <div class="col s12 input-field">
                             <i class="material-icons prefix purple-text">account_box</i>

@@ -1,5 +1,5 @@
     <nav class="navbar-fixed">
-        <div class="nav-wrapper teal darken-4">
+        <div class="nav-wrapper indigo darken-4">
             <!-- ทำ Side Nav -->
             <a href="#" class="sidenav-trigger show-on-large " data-target="sidenav">
 				<i class="material-icons ">menu</i>
@@ -7,8 +7,8 @@
             <!--  -->
 
             <div class="container">
-                <img src="./img/kulogo.png" alt="" width="60px">&nbsp;
-                <a href="index.php" class="brand-logo">KU-Shop</a>
+                <img src="./img/Football Soccer Club Logo2.png" alt="" width="60px">&nbsp;
+                <a href="index.php" class="brand-logo">Football Jersey Store</a>
                 <ul class="right hide-on-med-and-down">
 
                     <li>
@@ -44,7 +44,7 @@
     </nav>
 
     <!-- ---------------------------------------------------- -->
-    <ul class="sidenav teal " id="sidenav">
+    <ul class="sidenav indigo " id="sidenav">
         <?php 
             if($_SESSION['u_level']=='admin') 
             { 
