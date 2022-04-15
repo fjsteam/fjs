@@ -39,7 +39,11 @@ include "connector.php";
                 <div class="col l3 m4 s6">
                     <div class="card">
                         <div class="card-image">
-                            <img class="materialboxed tooltipped" src="./it_img/<?= $data_array['item_id'] ?>.jpg" alt="<?= $data_array['item_id'] ?>" width="100px" data-position="right" data-tooltip="<?= $data_array['item_price'] ?>">
+                            <img class="materialboxed tooltipped" 
+                                src="./it_img/<?= $data_array['item_img'] ?>" 
+                                alt="<?= $data_array['item_id'] ?>" width="100px" 
+                                data-position="right" 
+                                data-tooltip="<?= $data_array['item_price'] ?>">
                         </div>
                         <!-- <div class="card-content">
                         </div> -->

@@ -73,14 +73,14 @@
     <!-- ระบุ Class เป็น dropdown-contert และระบุ id ของแต่ละ submenu -->
 	<ul id="manage" class="dropdown-content green lighten-2">
 		<li><a href="user_list.php" class="green-text text-darken-4" >ข้อมูลผู้ใช้</a></li>
-		<li><a href="item_list.php" class="green-text text-darken-4" >ข้อมูลสินค้า</a></li>
+		<li><a href="item_list.php?findtext=" class="green-text text-darken-4" >ข้อมูลสินค้า</a></li>
 		<li><a href="sup_list.php" class="green-text text-darken-4" >ข้อมูลผู้จัดจำหน่าย</a></li>
 	</ul>
     <!-- ส่วน Sub Menu -->
 	<!-- ระบุ Class เป็น dropdown-contert และระบุ id ของแต่ละ submenu -->
     <ul id="work" class="dropdown-content green lighten-2">
-		<li><a href="buy_show.php" class="green-text text-darken-4" >รับสินค้าเข้าร้าน</a></li>
-		<li><a href="buy_list.php" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
+		<li><a href="buy_show.php?buy_id=" class="green-text text-darken-4" >รับสินค้าเข้าร้าน</a></li>
+		<li><a href="buy_list.php?findtext=" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
 		<li><a href="cart_list.php" class="green-text text-darken-4" >เอกสารขายสินค้า</a></li>
 	</ul>
 
