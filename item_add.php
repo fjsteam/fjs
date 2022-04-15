@@ -49,7 +49,7 @@
         }
         
 
-        $data_id_max="SELECT count(item_id) as countid from item where item_id =";
+        $data_id_max="SELECT count(item_id) as countid from item ";
         $data_id_max=$db->query($data_id_max);
         $data_array = $data_id_max->fetch(PDO::FETCH_ASSOC);
         $id_max=$data_array['countid']+1;
