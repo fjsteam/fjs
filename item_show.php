@@ -30,7 +30,7 @@
             <div class="col s12 offset-l1">
                 <div class="row">
                     <div class="col s12 m6 l5 center">
-                        <img src="./it_img/<?=$data_arr['item_id']?>.jpg" 
+                        <img src="./it_img/<?=$data_arr['item_img']?>" 
                                             alt="<?=$data_arr['item_name']?>" 
                                             class="materialboxed z-depth-2" width="300px"> 
                     </div>

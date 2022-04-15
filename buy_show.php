@@ -113,10 +113,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="col s5 m4 l2 input-field">
-                        <input type="file" class="file-path validate" id="buy_img" name="buy_img" value="<?=$master_array['buy_img']?>" >
-                        <label for="buy_img">รูปภาพ</label>
-                    </div>
+                   
                     <div class="col s12 m6 l3 input-field">
                         <input type="text" id="buy_date" name="buy_date" class="datepicker" value="<?=$master_array['buy_date']?>">
                         <label for="buy_date">วันที่</label>
