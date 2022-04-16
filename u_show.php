@@ -11,7 +11,7 @@
     <title>KU Computer Shop</title>
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
-    <link rel="icon" href="./img/kulogo.ico">
+    <link rel="icon" href="./img/Football Soccer Club Logo1.png">
 </head>
 <body>
     <?php
@@ -33,12 +33,12 @@
             <div class="col l6 m6 s12">
                 <table>
                     <tr>
-                        <th>ชื่อ</th>
-                        <td><?=$data_arr['u_name']?></td>
+                        <th>ชื้อผู้ใช้งาน</th>
+                        <td><?=$data_arr['u_id']?></td>
                     </tr>
                     <tr>
-                        <th>รหัส</th>
-                        <td><?=$data_arr['u_id']?></td>
+                        <th>ชื่อ นามสกุล</th>
+                        <td><?=$data_arr['u_name']?></td>
                     </tr>
                     <tr>
                         <th>สิทธิ</th>

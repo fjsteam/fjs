@@ -11,7 +11,7 @@
     <title>KU Computer Shop</title>
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
-    <link rel="icon" href="./img/kulogo.ico">
+    <link rel="icon" href="./img/Football Soccer Club Logo1.png">
 </head>
 <body>
     <?php
@@ -54,7 +54,7 @@
                                 <i class="material-icons prefix">account_box</i>
                                 <input type="text" name="u_id" id="u_id" value="<?=$data_arr['u_id']?>" required>
                                 <input type="hidden" name="old_u_id" id="old_u_id" value="<?=$data_arr['u_id']?>" required>
-                                <label for="u_id">รหัสผู้ใช้(Login Name)</label>
+                                <label for="u_id">ชื่อผู้ใช้(User Name)</label>
                             </div>
                             <div class="col s12  input-field">
                                 <i class="material-icons prefix">font_download</i>
