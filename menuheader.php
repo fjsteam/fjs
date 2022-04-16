@@ -91,7 +91,7 @@
 		<li><a href="rep_buy_monthly.php" class="green-text text-darken-4" >สินค้าเข้ารายเดือน</a></li>
 		<li><a href="rep_stk_item.php" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>
 		<li><a href="checklogin.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายวัน</a></li>
-		<li><a href="#" class="green-text text-darken-4" >พนักงานทำงานรายเดือน</a></li>
+		<li><a href="monthly_login.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายเดือน</a></li>
 	</ul>
 
     

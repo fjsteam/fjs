@@ -18,18 +18,40 @@
         include "menuheader.php";
     ?>
     <div class="container">
-        <form action="checklogin.php" method="GET">
-            <div class="row valign-wrapper">
-                <div class="col s5 m5 l3">
+        <!-- ระบุการส่งข้อมูลผ่าน FORM เป็นแบบ GET เพราะว่าเป็นรายงานไม่มี Security และเพื่อสะดวกต่อการ ย้อนกลับ  -->
+        <form action="monthly_login.php" method="GET">
+            <div class="row">
+                <h5 class="col s6 m4 l5">รายงานขายสินค้ารายเดือน</h5>                
+                <h5 class="col s3 m3 l2 input-field">
+                    
                     <?php
-                        if(isset($_GET['finddate']))
-                            $finddate=$_GET['finddate'];
+                         //ถ่าไม่มีการรับค่า วันแรก ก็ให้กำหนดเป็นวันที่ 1 ของเดือนปัจจุบัน 
+                        if(isset($_GET['sdate']))
+                            $sdate=$_GET['sdate'];
                         else
-                            $finddate=date('Y-m-d');
+                        {
+                            $sdate=date('Y-m-01');
+                        }
                     ?>
-                    <input type="text" name="finddate" id="finddate" value="<?=$finddate?>" class="datepicker">
-                </div>
-                <div class="col s5 m5 l4  input-field right">
+                    <input type="text" name="sdate" id="sdate" value="<?=$sdate?>" class="datepicker" >
+                    <label for="sdate">ตั้งแต่</label>
+                </h5>
+                <h5 class="col s3 m3 l2  input-field">
+                    
+                    <?php
+                        // ถ้าไม่มีการรับค่า วันสุดท้าย ก็ให้กำหนดเป็นวันสุดท้ายของเดือนนั้น 
+                        // โดยผ่าน Paramiter 't' ใน Function date()
+                        if(isset($_GET['edate']))
+                            $edate=$_GET['edate'];
+                        else
+                        {
+                            $edate=date('Y-m-t');
+                        }
+                    ?>
+                    <input type="text" name="edate" id="edate" value="<?=$edate?>" class="datepicker" >
+                    <label for="edate">ถึง</label>
+                    </h5>
+                    <div class="col s5 m5 l4  input-field right">
                     <i class="material-icons prefix">search</i>
                     <!-- สร้าง textbox สำหรับคนห้าสินค้า -->
                     <input id="validate" name="validate" type="text" class="validate" value="<?=$_GET['validate']?>">
@@ -53,8 +75,8 @@
             <?php
                 $sql_data = "   SELECT *FROM user_date_login_user
                 left join user on user_date_login_user.user_id=user.u_id
-                WHERE user_date_login_user.date_time_login like'%".$finddate."%' 
-                and user_date_login_user.date_time_login like'%".$finddate."%' and user.u_name like'%".$_GET['validate']."%'";
+                WHERE user_date_login_user.date_time_login between'".$sdate."' AND '".$edate."'
+                and user_date_login_user.date_time_login between '%".$sdate."' AND '".$edate."' and user.u_name like'%".$_GET['validate']."%'";
 
                 // echo  $sql_data;           
                 $res_data = $db->query($sql_data);
@@ -88,5 +110,6 @@
     <?php
         include "menuscript.php";
     ?>
+    
 </body>
 </html>
