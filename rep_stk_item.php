@@ -109,7 +109,8 @@
             
             // คำนวนค่าคงเหลือ ก่อนวันที่ระบุวันแรก
             $remain=$rem_in_arr['sQty']-$rem_out_arr['sQty'];
-
+            $q_in=$rem_in_arr['sQty'];
+            $q_out=$rem_out_arr['sQty'];
         ?>
         <h5><?=$item_array['item_name']?></h5>
         <table class="striped highlight">
