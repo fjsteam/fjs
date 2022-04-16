@@ -26,10 +26,18 @@
                     
                     <?php
                         //ถ่าไม่มีการรับค่า วันที่ระบุ ก็ให้กำหนดเป็นวันปัจจุบัน 
-                        if(isset($_GET['finddate']))
+                        if($_GET['finddate']!=null)
+                        {
                             $finddate=$_GET['finddate'];
-                        else
+                        }
+                            
+                        else{
                             $finddate=date('Y-m-d');
+                        }
+                        echo'<script>
+                        alert("'. $finddate.'+Success")
+                    
+                    </script>' ;
                     ?>
                     <input type="text" name="finddate" id="finddate" value="<?=$finddate?>" class="datepicker" onchange="this.form.submit();">
                     <label for="finddate">วันที่</label>
@@ -52,16 +60,28 @@
                 // buy_item เพื่อเลือกสินค้าในเอกสารที่ตรงวันที่ หายอดจำนวน และราคา
                 // item เพื่อแสดงชื่อสินค้า
                 // อย่าลือ Group By field ที่ไม่มีการ SUM
+                // echo'<script>
+                //     alert("'.$finddate.'+Success")
+                // </script>' ;
                 $sql_data = "   SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
                                 FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
-                                        LEFT JOIN item ON buy_item.item_id = item.item_id
-                                WHERE item.item_id IS NOT NULL 
-                                AND buy.buy_date = '".$_GET['finddate']."' 
-                                GROUP BY item.item_id,item.item_name
-                                ORDER BY item.item_id ";
-                // echo  $sql_data;           
+                                LEFT JOIN item ON buy_item.item_id = item.item_id
+                                WHERE item.item_id IS NOT NULL AND buy.buy_date='".$finddate."'
+                                GROUP BY item.item_id,item.item_name";
+                                // SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
+                                // FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
+                                //         LEFT JOIN item ON buy_item.item_id = item.item_id
+                                // -- ORDER BY item.item_id 
+                                // -- WHERE item.item_id IS NOT NULL 
+                                // -- AND buy.buy_date = '".$_GET['finddate']."' 
+                                // -- GROUP BY item.item_id,item.item_name
+                                // -- ORDER BY item.item_id ";
+                                
                 $res_data = $db->query($sql_data);
-
+                echo'<script>
+                alert("'. $sql_data.'")
+            
+            </script>' ;     
                 $j=0;
                 //วนลูปแสดงผล
                 while ($data_array = $res_data->fetch(PDO::FETCH_ASSOC)) 

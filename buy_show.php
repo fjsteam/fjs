@@ -174,7 +174,7 @@
                             {
                                 if ($list_array['item_id']==$master_array['item_id'])
                                 ?>
-                                    <option  value="<?=$list_array['item_id']?>" ><?=$list_array['item_rem']?></option>
+                                    <option  value="<?=$list_array['item_id']?>" ><?=$list_array['item_name']?></option>
                                 <?php
                             }
                         ?>

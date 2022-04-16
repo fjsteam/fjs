@@ -22,7 +22,10 @@
             <div class="row valign-wrapper">
                 <div class="col s5 m5 l3">
                     <?php
-                        if(isset($_GET['finddate']))
+                //     echo'<script>
+                //     alert("'.$_GET['finddate'].'+Success")
+                // </script>' ;
+                        if($_GET['finddate']!=null)
                             $finddate=$_GET['finddate'];
                         else
                             $finddate=date('Y-m-d');
@@ -32,7 +35,7 @@
                 <div class="col s5 m5 l4  input-field right">
                     <i class="material-icons prefix">search</i>
                     <!-- สร้าง textbox สำหรับคนห้าสินค้า -->
-                    <input id="findtext" name="findtext" type="text" class="validate" value="<?=$_GET['findtext']?>">
+                    <input id="findtext" name="findtext" type="text" class="validate">
                     <label for="findtext">ค้นหา</label>
                 </div>
                 <div class="col s1 ">

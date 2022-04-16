@@ -76,7 +76,7 @@
                                 FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
                                         LEFT JOIN item ON buy_item.item_id = item.item_id
                                 WHERE item.item_id IS NOT NULL 
-                                AND buy.buy_date BETWEEN '".$_GET['sdate']."' AND '".$_GET['edate']."' 
+                                AND buy.buy_date BETWEEN '".$sdate."' AND '".$edate."' 
                                 GROUP BY item.item_id,item.item_name 
                                 ORDER BY item.item_id";
                 // echo  $sql_data;           

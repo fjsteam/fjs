@@ -35,15 +35,15 @@
             <div class="row">
            
                     <div class="col s5 m4 l2 input-field">
-                            <input type="text" id="name_product" name="name_product" />
+                            <input type="text" id="name_product" name="name_product" required/>
                             <label for="name_product">ชื่อสินค้า</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
-                            <input type="text" id="price_product" name="price_product" />
+                            <input type="text" id="price_product" name="price_product" required/>
                             <label for="price_product">ราคาสินค้า</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
-                                <input type="text" id="cur_product" name="cur_product" />
+                                <input type="text" id="cur_product" name="cur_product" required/>
                                 <label for="cur_product">จำนวนสินค้า</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
@@ -54,7 +54,7 @@
 							<div class="btn">
 								<span>File</span>
 								<!----กำหนด input ชื่อ u_pic ให้เป็นการอ่านค่า file โดยให้รับค่าเฉพาะ file image ----->
-								<input  type="file" accept="image/jpeg" id='u_img' name="u_img">
+								<input  type="file" accept="image/jpeg" id='u_img' name="u_img" required>
 								<!-- accept="image/*,application/pdf" -->
 							</div>
 							<div class="file-path-wrapper">

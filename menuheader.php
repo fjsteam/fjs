@@ -72,7 +72,7 @@
     <!-- Side Nav Sub MENU -->
     <!-- ระบุ Class เป็น dropdown-contert และระบุ id ของแต่ละ submenu -->
 	<ul id="manage" class="dropdown-content green lighten-2">
-		<li><a href="user_list.php" class="green-text text-darken-4" >ข้อมูลผู้ใช้</a></li>
+		<li><a href="user_list.php?findtext=" class="green-text text-darken-4" >ข้อมูลผู้ใช้</a></li>
 		<li><a href="item_list.php?findtext=" class="green-text text-darken-4" >ข้อมูลสินค้า</a></li>
 		<li><a href="sup_list.php" class="green-text text-darken-4" >ข้อมูลผู้จัดจำหน่าย</a></li>
 	</ul>
@@ -80,14 +80,14 @@
 	<!-- ระบุ Class เป็น dropdown-contert และระบุ id ของแต่ละ submenu -->
     <ul id="work" class="dropdown-content green lighten-2">
 		<li><a href="buy_show.php?buy_id=" class="green-text text-darken-4" >รับสินค้าเข้าร้าน</a></li>
-		<li><a href="buy_list.php?findtext=" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
+		<li><a href="buy_list.php?findtext=&finddate=" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
 		<li><a href="cart_list.php" class="green-text text-darken-4" >เอกสารขายสินค้า</a></li>
 	</ul>
 
     <ul id="report" class="dropdown-content green lighten-2">
 		<li><a href="#" class="green-text text-darken-4" >สินค้าขายรายวัน</a></li>
 		<li><a href="#" class="green-text text-darken-4" >สินค้าขายรายเดือน</a></li>
-		<li><a href="rep_buy_daily.php" class="green-text text-darken-4" >สินค้าเข้ารายวัน</a></li>
+		<li><a href="rep_buy_daily.php?finddate=" class="green-text text-darken-4" >สินค้าเข้ารายวัน</a></li>
 		<li><a href="rep_buy_monthly.php" class="green-text text-darken-4" >สินค้าเข้ารายเดือน</a></li>
 		<li><a href="rep_stk_item.php" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>
 		<li><a href="#" class="green-text text-darken-4" >พนักงานทำงานรายวัน</a></li>

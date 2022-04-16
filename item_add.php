@@ -68,7 +68,7 @@
                         item_img
                     )
             VALUES (
-                        'it".$id_max."',
+                        'pd".$id_max."',
                         '".$_POST['name_product']."',
                         '".$_POST['price_product']."',
                         '".$_POST['cur_product']."',
