@@ -13,19 +13,24 @@
     <link rel="stylesheet" href="./iconfont/material-icons.css">
     <link rel="icon" href="./img/Football Soccer Club Logo1.png">
 </head>
-<body>
+<body style="background-image: url(https://www.soccerbible.com/media/133276/mls-header-min.jpg); 
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+">
     <?php
         include "menuheader.php";
     ?>
 
     <div class="container">
+    <div class="card-panel z-depth-4" style="margin: auto; margin-top: 50px; margin-bottom: 140px; border-radius: 30px;background-color: rgba(255, 255, 255, 0.6);backdrop-filter: blur(10px);">
         <?php
             $u_id=$_GET['u_id'];
             $sql_u="SELECT * FROM user WHERE u_id = '".$u_id."' ";
             $res_u=$db->query($sql_u);
             $data_arr=$res_u->fetch(PDO::FETCH_ASSOC);
         ?>
-        <h4 class="pink-text">ข้อมูลของ<?=$data_arr['u_name']?></h4>
+        <h4 class="">ข้อมูลของ<?=$data_arr['u_name']?></h4>
         <div class="row">
             <div class="col l6 m6 s12 ">
                <img src="./u_img/<?=$data_arr['u_id']?>.jpg" alt="<?=$data_arr['u_id']?>" class="materialboxed z-depth-2 " width="200px">
@@ -56,11 +61,20 @@
             </div>
         </div>
     </div>
-
-
-
+    </div>
     <?php
         include "menuscript.php";
     ?>
+    <footer class="page-footer indigo darken-4">
+          <div class="container">
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 All rights reserved.
+Theme: ColorMag by FJS
+            </div>
+          </div>
+</footer>
 </body>
+
 </html>

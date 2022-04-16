@@ -24,10 +24,56 @@ include "connector.php";
 </head>
 
 <body>
+    
     <?php
     include "menuheader.php";
-    ?>
-    <div class="container">
+    ?>  
+    <div class="slider">
+          <ul class="slides">
+            <li> 
+              <img src="./img/chelsea.jpg"style="background-size: contain;">
+              <div class="caption center-align" style="background-color: rgba(128, 128, 128, 0.4);"  >
+              
+                    <h3>Chelsea</h3>
+                    <h5 class="light grey-text text-lighten-3">2021/2022</h5>
+              
+              </div>
+            </li>
+            <li>
+              <img src="./img/mancity.jpeg" style="background-size: contain;">
+              <div class="caption center-align" style="background-color: rgba(128, 128, 128, 0.4);" >
+                <h3>Manchester City</h3>
+                <h5 class="light grey-text text-lighten-3">2021/2022</h5>
+              </div>
+            </li>
+            <li>
+              <img src="./img/liverpool.jpeg" style="background-size: contain;">
+              <div class="caption center-align" style="background-color: rgba(128, 128, 128, 0.4);" >
+                <h3>liverpool</h3>
+                <h5 class="light grey-text text-lighten-3">2021/2022</h5>
+              </div>
+            </li>
+            <li>
+              <img src="./img/manu.jpg" style="background-size: contain;">
+              <div class="caption center-align" style="background-color: rgba(128, 128, 128, 0.4);" >
+                <h3>Manchester United</h3>
+                <h5 class="light grey-text text-lighten-3">2021/2022</h5>
+              </div>
+            </li>
+            <li>
+              <img src="./img/Arsenal.webp" style="background-size: contain;">
+              <div class="caption center-align" style="background-color: rgba(128, 128, 128, 0.4);" >
+                <h3>Arsenal</h3>
+                <h5 class="light grey-text text-lighten-3">2021/2022</h5>
+              </div>
+            </li>
+          </ul>
+        
+        </div>
+        <br>
+        <br>    
+
+
         <h4 class="pink-text">สินค้า</h4>
         <!-- <h4 class="pink-text">สินค้า</h4> -->
 
@@ -285,5 +331,14 @@ include "connector.php";
     include "menuscript.php";
     ?>
 </body>
-
+<footer class="page-footer indigo darken-4">
+          <div class="container">
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 All rights reserved.
+Theme: ColorMag by FJS
+            </div>
+          </div>
+</footer>
 </html>
