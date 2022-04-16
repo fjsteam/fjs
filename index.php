@@ -50,9 +50,9 @@ include "connector.php";
                         </div> -->
                         <div class="card-action">
                             <a href="item_show.php?item_id=<?= $data_array['item_id'] ?>">
-                                <i class="material-icons ">more_horiz</i>
+                                <?= $data_array['item_name'] ?>
                             </a>
-                            <?php if ($_SESSION['u_level'] != 'admin') { ?>
+                            <?php if ($_SESSION['u_level'] != 'admin'and$_SESSION['u_level']!='') { ?>
                                 <a href="cart_add.php?item_id=<?= $data_array['item_id'] ?>">
                                     <i class="material-icons right">shopping_cart</i>
                                 </a>
