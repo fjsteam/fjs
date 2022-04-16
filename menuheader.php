@@ -90,8 +90,8 @@
 		<li><a href="rep_buy_daily.php?finddate=" class="green-text text-darken-4" >สินค้าเข้ารายวัน</a></li>
 		<li><a href="rep_buy_monthly.php" class="green-text text-darken-4" >สินค้าเข้ารายเดือน</a></li>
 		<li><a href="rep_stk_item.php" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>
-		<li><a href="checklogin.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายวัน</a></li>
-		<li><a href="monthly_login.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายเดือน</a></li>
+		<li><a href="checklogin.php?validate=" class="green-text text-darken-4" >รายการผู้ใช้งานรอบรายวัน</a></li>
+		<li><a href="monthly_login.php?validate=" class="green-text text-darken-4" >รายการผู้ใช้งานรอบรายเดือน</a></li>
 	</ul>
 
     
