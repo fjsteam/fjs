@@ -19,9 +19,9 @@
     ?>
     <div class="container">
         <!-- ระบุการส่งข้อมูลผ่าน FORM เป็นแบบ GET เพราะว่าเป็นรายงานไม่มี Security และเพื่อสะดวกต่อการ ย้อนกลับ  -->
-        <form action="rep_buy_daily.php" method="GET">
+        <form action="rep_cart_daily.php" method="GET">
             <div class="row ">
-                <h5 class="col s6 m6 l8">รายงานสินค้าซื้อเข้ารายวัน</h5>                
+                <h5 class="col s6 m6 l8">รายงานขายสินค้ารายวัน</h5>                
                 <div class="col s4 m4 l3">
                     
                     <?php
@@ -57,33 +57,33 @@
         
             <?php
                 // Query หายอดรวมของ สินค้า ผ่านการ JOIN กัน สามตาราง
-                // buy เพื่อกำหนดวันที่
-                // buy_item เพื่อเลือกสินค้าในเอกสารที่ตรงวันที่ หายอดจำนวน และราคา
+                // cart เพื่อกำหนดวันที่
+                // cart_item เพื่อเลือกสินค้าในเอกสารที่ตรงวันที่ หายอดจำนวน และราคา
                 // item เพื่อแสดงชื่อสินค้า
                 // อย่าลือ Group By field ที่ไม่มีการ SUM
                 // echo'<script>
                 //     alert("'.$finddate.'+Success")
                 // </script>' ;
-                $sql_data = "   SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
-                                FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
-                                LEFT JOIN item ON buy_item.item_id = item.item_id
-                                WHERE item.item_id IS NOT NULL AND buy.buy_date='".$finddate."'
+                $sql_data = "   SELECT item.item_id,item.item_name,SUM(cart_item.qty) AS sQty,SUM(cart_item.price) AS sPrice
+                                FROM cart LEFT JOIN cart_item ON cart.cart_id = cart_item.cart_id 
+                                LEFT JOIN item ON cart_item.item_id = item.item_id
+                                WHERE item.item_id IS NOT NULL  AND cart.cart_date='".$finddate."' 
                                 GROUP BY item.item_id,item.item_name";
-                                // SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
-                                // FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
-                                //         LEFT JOIN item ON buy_item.item_id = item.item_id
+                                // SELECT item.item_id,item.item_name,SUM(cart_item.qty) AS sQty,SUM(cart_item.price) AS sPrice
+                                // FROM cart LEFT JOIN cart_item ON cart.cart_id = cart_item.cart_id 
+                                //         LEFT JOIN item ON cart_item.item_id = item.item_id
                                 // -- ORDER BY item.item_id 
                                 // -- WHERE item.item_id IS NOT NULL 
-                                // -- AND buy.buy_date = '".$_GET['finddate']."' 
+                                // -- AND cart.cart_date = '".$_GET['finddate']."' 
                                 // -- GROUP BY item.item_id,item.item_name
                                 // -- ORDER BY item.item_id ";
                                 
                 $res_data = $db->query($sql_data);
-                echo'<script>
-                alert("'. $sql_data.'")
-            
-            </script>' ;     
+                  
                 $j=0;
+                echo"<script>
+                alert('".$sql_data."')
+                     </script>" ;   
                 //วนลูปแสดงผล
                 while ($data_array = $res_data->fetch(PDO::FETCH_ASSOC)) 
                 {

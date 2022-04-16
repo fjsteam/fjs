@@ -61,7 +61,8 @@
         <table class="striped highlight">
             <tr class="green lighten-5">
                 <th></th>
-                <th colspan="2">สินค้า</th>
+                <th >รหัสสินค้า</th>
+                <th >ชื่อสินค้า</th>
                 <th class="right-align">จำนวน</th>
                 <th class="right-align">ยอดเงิน</th>
             </tr>

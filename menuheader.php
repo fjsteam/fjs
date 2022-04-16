@@ -85,8 +85,8 @@
 	</ul>
 
     <ul id="report" class="dropdown-content green lighten-2">
-		<li><a href="#" class="green-text text-darken-4" >สินค้าขายรายวัน</a></li>
-		<li><a href="#" class="green-text text-darken-4" >สินค้าขายรายเดือน</a></li>
+		<li><a href="rep_sale_daily.php?finddate=" class="green-text text-darken-4" >สินค้าขายรายวัน</a></li>
+		<li><a href="rep_sale_monthly.php?finddate=" class="green-text text-darken-4" >สินค้าขายรายเดือน</a></li>
 		<li><a href="rep_buy_daily.php?finddate=" class="green-text text-darken-4" >สินค้าเข้ารายวัน</a></li>
 		<li><a href="rep_buy_monthly.php" class="green-text text-darken-4" >สินค้าเข้ารายเดือน</a></li>
 		<li><a href="rep_stk_item.php" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>

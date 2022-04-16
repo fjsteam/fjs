@@ -19,33 +19,45 @@
     ?>
     <div class="container">
         <!-- ระบุการส่งข้อมูลผ่าน FORM เป็นแบบ GET เพราะว่าเป็นรายงานไม่มี Security และเพื่อสะดวกต่อการ ย้อนกลับ  -->
-        <form action="rep_buy_daily.php" method="GET">
-            <div class="row ">
-                <h5 class="col s6 m6 l8">รายงานสินค้าซื้อเข้ารายวัน</h5>                
-                <div class="col s4 m4 l3">
+        <form action="rep_sale_monthly.php" method="GET">
+            <div class="row">
+                <h5 class="col s6 m4 l5">รายงานขายสินค้ารายเดือน</h5>                
+                <h5 class="col s3 m3 l2 input-field">
                     
                     <?php
-                        //ถ่าไม่มีการรับค่า วันที่ระบุ ก็ให้กำหนดเป็นวันปัจจุบัน 
-                        if($_GET['finddate']!=null)
+                         //ถ่าไม่มีการรับค่า วันแรก ก็ให้กำหนดเป็นวันที่ 1 ของเดือนปัจจุบัน 
+                        if(isset($_GET['sdate']))
+                            $sdate=$_GET['sdate'];
+                        else
                         {
-                            $finddate=$_GET['finddate'];
+                            $sdate=date('Y-m-01');
                         }
-                            
-                        else{
-                            $finddate=date('Y-m-d');
-                        }
-                        echo'<script>
-                        alert("'. $finddate.'+Success")
-                    
-                    </script>' ;
                     ?>
-                    <input type="text" name="finddate" id="finddate" value="<?=$finddate?>" class="datepicker" onchange="this.form.submit();">
-                    <label for="finddate">วันที่</label>
-                </div>
+                    <input type="text" name="sdate" id="sdate" value="<?=$sdate?>" class="datepicker" >
+                    <label for="sdate">ตั้งแต่</label>
+                </h5>
+                <h5 class="col s3 m3 l2  input-field">
+                    
+                    <?php
+                        // ถ้าไม่มีการรับค่า วันสุดท้าย ก็ให้กำหนดเป็นวันสุดท้ายของเดือนนั้น 
+                        // โดยผ่าน Paramiter 't' ใน Function date()
+                        if(isset($_GET['edate']))
+                            $edate=$_GET['edate'];
+                        else
+                        {
+                            $edate=date('Y-m-t');
+                        }
+                    ?>
+                    <input type="text" name="edate" id="edate" value="<?=$edate?>" class="datepicker" >
+                    <label for="edate">ถึง</label>
+                    </h5>
+                <h5 class="s1 ">
+                    <button type="submit" class="btn btn-floating   input-field"><i class="material-icons">search</i></button>
+                </h5>
             </div>
         </form>
     </div>
-    <div class="container" >
+    <div class="container" id="item_pic">
         <table class="striped highlight">
             <tr class="green lighten-5">
                 <th></th>
@@ -57,32 +69,20 @@
         
             <?php
                 // Query หายอดรวมของ สินค้า ผ่านการ JOIN กัน สามตาราง
-                // buy เพื่อกำหนดวันที่
-                // buy_item เพื่อเลือกสินค้าในเอกสารที่ตรงวันที่ หายอดจำนวน และราคา
+                // cart เพื่อกำหนดวันที่
+                // cart_item เพื่อเลือกสินค้าในเอกสารที่ตรงวันที่ หายอดจำนวน และราคา
                 // item เพื่อแสดงชื่อสินค้า
                 // อย่าลือ Group By field ที่ไม่มีการ SUM
-                // echo'<script>
-                //     alert("'.$finddate.'+Success")
-                // </script>' ;
-                $sql_data = "   SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
-                                FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
-                                LEFT JOIN item ON buy_item.item_id = item.item_id
-                                WHERE item.item_id IS NOT NULL AND buy.buy_date='".$finddate."'
-                                GROUP BY item.item_id,item.item_name";
-                                // SELECT item.item_id,item.item_name,SUM(buy_item.qty) AS sQty,SUM(buy_item.price) AS sPrice
-                                // FROM buy LEFT JOIN buy_item ON buy.buy_id = buy_item.buy_id 
-                                //         LEFT JOIN item ON buy_item.item_id = item.item_id
-                                // -- ORDER BY item.item_id 
-                                // -- WHERE item.item_id IS NOT NULL 
-                                // -- AND buy.buy_date = '".$_GET['finddate']."' 
-                                // -- GROUP BY item.item_id,item.item_name
-                                // -- ORDER BY item.item_id ";
-                                
+                $sql_data = "   SELECT item.item_id,item.item_name,SUM(cart_item.qty) AS sQty,SUM(cart_item.price) AS sPrice
+                                FROM cart LEFT JOIN cart_item ON cart.cart_id = cart_item.cart_id 
+                                        LEFT JOIN item ON cart_item.item_id = item.item_id
+                                WHERE item.item_id IS NOT NULL 
+                                 AND cart.cart_date BETWEEN '".$sdate."' AND '".$edate."' 
+                                GROUP BY item.item_id,item.item_name 
+                                ORDER BY item.item_id";
+                // echo  $sql_data;           
                 $res_data = $db->query($sql_data);
-                echo'<script>
-                alert("'. $sql_data.'")
-            
-            </script>' ;     
+
                 $j=0;
                 //วนลูปแสดงผล
                 while ($data_array = $res_data->fetch(PDO::FETCH_ASSOC)) 
@@ -114,9 +114,12 @@
         
         
     </div>
+
+
     
     <?php
         include "menuscript.php";
     ?>
+    
 </body>
 </html>
