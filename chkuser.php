@@ -18,6 +18,14 @@
             $_SESSION['u_name']=$data_array['u_name'];
             $_SESSION['u_level']=$data_array['u_level'];
 
+            $user_id=$data_array['u_id'];
+
+            $sql_login_time="INSERT INTO user_date_login_user(user_id,date_time_login,date_time_logout) 
+                                VALUES ('" .$_SESSION['u_id']. "',
+                                        " .'CURRENT_TIMESTAMP()'. ",
+                                        " .'CURRENT_TIMESTAMP()'. "
+                                        );";
+            $db->query($sql_login_time);
             
             ?>
                 <script>
@@ -34,7 +42,6 @@
                 </script>
             <?php
         }
-
     }
     else
     {
