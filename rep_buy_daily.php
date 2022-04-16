@@ -12,6 +12,12 @@
     <title><?=$_SESSION['u_name']?></title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="iconfont/material-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Mitr', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -34,10 +40,10 @@
                         else{
                             $finddate=date('Y-m-d');
                         }
-                        echo'<script>
-                        alert("'. $finddate.'+Success")
+                    //     echo'<script>
+                    //     alert("'. $finddate.'+Success")
                     
-                    </script>' ;
+                    // </script>' ;
                     ?>
                     <input type="text" name="finddate" id="finddate" value="<?=$finddate?>" class="datepicker" onchange="this.form.submit();">
                     <label for="finddate">วันที่</label>
@@ -79,10 +85,10 @@
                                 // -- ORDER BY item.item_id ";
                                 
                 $res_data = $db->query($sql_data);
-                echo'<script>
-                alert("'. $sql_data.'")
+            //     echo'<script>
+            //     alert("'. $sql_data.'")
             
-            </script>' ;     
+            // </script>' ;     
                 $j=0;
                 //วนลูปแสดงผล
                 while ($data_array = $res_data->fetch(PDO::FETCH_ASSOC)) 

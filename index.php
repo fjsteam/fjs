@@ -13,12 +13,10 @@ include "connector.php";
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
     <link rel="icon" href="./img/Football Soccer Club Logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
     <style>
-        img.material-placeholder{
-            width: 25%;
-            margin-left: auto;
-            left: auto;
-            right: auto;
+        body{
+            font-family: 'Mitr', sans-serif;
         }
     </style>
 </head>

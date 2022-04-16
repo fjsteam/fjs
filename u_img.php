@@ -15,6 +15,12 @@ include 'connector.php';
     <link rel="stylesheet" href="iconfont/material-icons.css">
 
 	<link rel="icon" href="img/Football Soccer Club Logo1.png" />
+	<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Mitr', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
