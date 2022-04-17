@@ -12,6 +12,12 @@
     <title><?=$_SESSION['u_name']?></title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="iconfont/material-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Mitr', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -103,7 +109,8 @@
             
             // คำนวนค่าคงเหลือ ก่อนวันที่ระบุวันแรก
             $remain=$rem_in_arr['sQty']-$rem_out_arr['sQty'];
-
+            $q_in=$rem_in_arr['sQty'];
+            $q_out=$rem_out_arr['sQty'];
         ?>
         <h5><?=$item_array['item_name']?></h5>
         <table class="striped highlight">

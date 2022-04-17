@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="./css/materialize.min.css">
     <link rel="stylesheet" href="./iconfont/material-icons.css">
     <link rel="icon" href="./img/Football Soccer Club Logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Mitr', sans-serif;
+        }
+    </style>
 </head>
 <body style="background-image: url(https://www.soccerbible.com/media/133276/mls-header-min.jpg); 
 background-position: center;

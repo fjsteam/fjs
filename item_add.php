@@ -12,6 +12,12 @@
     <title><?=$_SESSION['u_name']?></title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="iconfont/material-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Mitr', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -22,14 +28,14 @@
         
         $theFile=basename($_FILES['u_img']['name']); //ระบุตำแหน่งของ File (ของเครื่องคอมพิวเตอร์) ที่จะอ่านมาทำการ Upload
         $ext = pathinfo($theFile, PATHINFO_EXTENSION); //นามสกุลของ file ต้นทาง (ไม่มีจุด)
-        echo'<script>
-        alert("'.$theFile.'")
+//         echo'<script>
+//         alert("'.$theFile.'")
         
-    </script>' ;
-    echo'<script>
-    alert("'.$ext.'")
+//     </script>' ;
+//     echo'<script>
+//     alert("'.$ext.'")
     
-</script>' ;
+// </script>' ;
         $uploaddir = 'it_img/'; //กำหนด Directory ของ Server ที่จะเอารูปไปเก็บ
         $uploadfile = $uploaddir.$theFile; 
         //ตั้งชื่อรูปที่จะเก็บ เป็น "ค่าของu_id.jpg" แล้วมาต่อกับ Directory ที่กำหนด เป็นข้อมูลการบันทึกทั้งหมด
@@ -53,10 +59,10 @@
         $data_id_max=$db->query($data_id_max);
         $data_array = $data_id_max->fetch(PDO::FETCH_ASSOC);
         $id_max=$data_array['countid']+1;
-        echo'<script>
-                    alert("'.$id_max.'")
+        // echo'<script>
+        //             alert("'.$id_max.'")
                     
-                </script>' ;
+        //         </script>' ;
         //ทำงาน
         try{
                     $sql_update = "INSERT  INTO item (
@@ -76,10 +82,10 @@
                         '".$theFile."'
             );";
                     $res_update = $db->query($sql_update);
-                    echo'<script>
-                    alert("'.$theFile.'+Success")
-                    window.location="item_list.php"
-                </script>' ;
+                //     echo'<script>
+                //     alert("'.$theFile.'+Success")
+                //     window.location="item_list.php"
+                // </script>' ;
         }
         catch (Exception $e){
            echo'<script>
