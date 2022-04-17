@@ -27,7 +27,7 @@
         <!-- ระบุการส่งข้อมูลผ่าน FORM เป็นแบบ GET เพราะว่าเป็นรายงานไม่มี Security และเพื่อสะดวกต่อการ ย้อนกลับ  -->
         <form action="rep_buy_monthly.php" method="GET">
             <div class="row">
-                <h5 class="col s6 m4 l5">รายงานซื้อสินค้าเข้า</h5>                
+                <h5 class="col s6 m4 l5">รายงานซื้อสินค้าเข้ารายเดือน</h5>                
                 <h5 class="col s3 m3 l2 input-field">
                     
                     <?php
