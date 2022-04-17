@@ -119,14 +119,14 @@
                         <input type="text" id="buy_date" name="buy_date" class="datepicker" value="<?=$master_array['buy_date']?>">
                         <label for="buy_date">วันที่</label>
                     </div>
-                    <div class="col s5 m4 l2 input-field">
-                        <input type="number" id="buy_qty" name="buy_qty" value="<?=$master_array['buy_qty']?>" >
+                    <!-- <div class="col s5 m4 l2 input-field">
+                        <input type="number" id="buy_qty" name="buy_qty" value="" >
                         <label for="buy_qty">จำนวน</label>
                     </div>
                     <div class="col s5 m4 l2 input-field">
-                        <input type="number" id="buy_money" name="buy_money" value="<?=$master_array['buy_money']?>" >
+                        <input type="number" id="buy_money" name="buy_money" value="" >
                         <label for="buy_money">ยอดเงิน</label>
-                    </div>
+                    </div> -->
                     
                     <?php if($master_array['buy_recv']!='Y') { ?> 
                     <div class="col s2 m4 l1 input-field">

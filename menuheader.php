@@ -80,8 +80,8 @@
 	<!-- ระบุ Class เป็น dropdown-contert และระบุ id ของแต่ละ submenu -->
     <ul id="work" class="dropdown-content green lighten-2">
 		<li><a href="buy_show.php?buy_id=" class="green-text text-darken-4" >รับสินค้าเข้าร้าน</a></li>
-		<li><a href="buy_list.php?findtext=&finddate=" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
-		<li><a href="cart_list.php" class="green-text text-darken-4" >เอกสารขายสินค้า</a></li>
+		<!-- <li><a href="buy_list.php?findtext=&finddate=" class="green-text text-darken-4" >เอกสารรับสินค้าเข้าร้าน</a></li>
+		<li><a href="cart_list.php" class="green-text text-darken-4" >เอกสารขายสินค้า</a></li> -->
 	</ul>
 
     <ul id="report" class="dropdown-content green lighten-2">
@@ -89,15 +89,9 @@
 		<li><a href="rep_sale_monthly.php?finddate=" class="green-text text-darken-4" >สินค้าขายรายเดือน</a></li>
 		<li><a href="rep_buy_daily.php?finddate=" class="green-text text-darken-4" >สินค้าเข้ารายวัน</a></li>
 		<li><a href="rep_buy_monthly.php" class="green-text text-darken-4" >สินค้าเข้ารายเดือน</a></li>
-<<<<<<< HEAD
 		<li><a href="rep_stk_item.php?item_id=&sdate=&edate=&q_in=&q_out=" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>
 		<li><a href="checklogin.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายวัน</a></li>
 		<li><a href="monthly_login.php?validate=" class="green-text text-darken-4" >พนักงานทำงานรายเดือน</a></li>
-=======
-		<li><a href="rep_stk_item.php" class="green-text text-darken-4" >เคลือนไหวสินค้า</a></li>
-		<li><a href="checklogin.php?validate=" class="green-text text-darken-4" >รายการผู้ใช้งานรอบรายวัน</a></li>
-		<li><a href="monthly_login.php?validate=" class="green-text text-darken-4" >รายการผู้ใช้งานรอบรายเดือน</a></li>
->>>>>>> 424d8c463cb57ae0f6e83ca47c0882e50dcf1d46
 	</ul>
 
     
